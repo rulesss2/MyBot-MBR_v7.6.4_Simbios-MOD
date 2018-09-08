@@ -1,0 +1,5 @@
+﻿[mod]
+version = "v1.0"
+
+messagenew = "Основное обновление!\nhttps://github.com/MyBotRun/MyBot/wiki/ChangeLog\n\nБлагодаря новым функциям и исправлениям"
+messageold = "Simbios MOD 1.0 уже доступна!\nПожалуйста скачайте последнюю версию:\nhttps://mybot.run"
