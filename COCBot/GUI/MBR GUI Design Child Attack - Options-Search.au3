@@ -205,14 +205,12 @@ Func CreateAttackSearchOptionsSearch()
 	$y += 20
 		$g_hChkLBDropEmptySiege = GUICtrlCreateCheckbox(GetTranslatedFileIni("MBR GUI Design Child Attack - Options-Search", "ChkLBDropEmptySiege", "LB Siege Drop"), $x - 5, $y, -1, -1)
 			$sTxtTip = GetTranslatedFileIni("MBR GUI Design Child Attack - Options-Search", "ChkLBDropEmptySiege_Info_01", "Drop empty siege machines in active base.") & @CRLF & _
-					   GetTranslatedFileIni("MBR GUI Design Child Attack - Options-Search", "ChkLBDropEmptySiege_Info_02", "Note: It will only work if siege machines is selected in Activebase Attack tab.")
 			_GUICtrlSetTip(-1, $sTxtTip)
 			GUICtrlSetState(-1, $GUI_DISABLE)
 			GUICtrlSetOnEvent(-1, "chkDropEmptySiege")
 
 		$g_hChkDBDropEmptySiege = GUICtrlCreateCheckbox(GetTranslatedFileIni("MBR GUI Design Child Attack - Options-Search", "ChkDBDropEmptySiege", "DB Siege Drop"), $x + 85, $y, -1, -1)
 			$sTxtTip = GetTranslatedFileIni("MBR GUI Design Child Attack - Options-Search", "ChkDBDropEmptySiege_Info_01", "Drop empty siege machines in dead base.") & @CRLF & _
-					   GetTranslatedFileIni("MBR GUI Design Child Attack - Options-Search", "ChkDBDropEmptySiege_Info_02", "Note: It will only work if siege machines is selected in Deadbase Attack tab.")
 			_GUICtrlSetTip(-1, $sTxtTip)
 			GUICtrlSetState(-1, $GUI_DISABLE)
 			GUICtrlSetOnEvent(-1, "chkDropEmptySiege")
