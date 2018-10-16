@@ -1,0 +1,135 @@
+
+
+**v1.0**
+
+**Added**
+
+-- Smart Train.
+-- Max logout time.
+-- Check Warden Mode.
+-- CSV Special Commands.
+-- CheckVersion
+-- Multi Finger.
+-- Unit/Wave Factor.
+-- Classic Four Finger.
+-- Boost for Magic Spell.
+-- Upgrade Management.
+-- Wall/Building Upgrading Priority.
+-- Skip receive/request CC if limit is higher.
+-- Attack priority.
+-- Priority System.
+-- Check Collector Outside.
+-- Russian Request.
+-- Request troops for defense.
+-- Return Home by Time.
+-- Builder Time Status.
+-- Request CC First.
+-- Check Hero Boost Time
+-- Goblin XP.
+-- Forecast.
+-- Humanization.
+-- Switch Profiles.
+-- NEW ChatBot.
+-- Smart Queue System
+-- Fixed GUI Attack Now Button
+-- GTFO
+-- Check Stop For War.
+-- Drop Trophies in Builders Base.
+-- Change Theme
+-- Lab Level detection.
+-- One Gem Boost.
+-- NEW Logo
+
+**IMPROVED AND FIXED**
+
+
+**v1.1**
+
+**Added**
+
+-- Drag And Drop Troops @ahsan iqbal
+
+
+**IMPROVED AND FIXED**
+
+-- Russian Languages report by vlad97 @rulesss
+-- Drop Trophies in Builders Base. @ChacalGyn
+-- Humanization. @rulesss
+-- Attack priority Fixed. @ahsan iqbal
+-- Reported Laboratory Crash Fixed. @Óðinn
+-- Reported Chatbot Bug Fixed. @Fahid.Mahmood
+-- GoblinXp Fast And Skip Zoomout. @Fahid.Mahmood
+-- Reported AttackNow Button Fixed. @Fahid.Mahmood
+
+**v1.2**
+
+**Added**
+
+-- Auto Dock, Hide Emulator & Bot Added By @Fahid.Mahmood Original Author @NguyenAnhHD
+-- Farm Schedule Added By @rulesss & @Fahid.Mahmood Original Author @demen
+-- Enable & Disable GUI on pause and resume @Óðinn
+-- Drop Empty Siege Machine Mod By @Fahid.Mahmood Solution Credit @SpartanUBPT
+ 
+**IMPROVED AND FIXED**
+
+-- Reported Lab Detect Crash Fixed @Fahid.Mahmood
+-- Reported Request CC Crash Fixed @Fahid.Mahmood
+-- Mod Tabs New Look and Feel. @Fahid.Mahmood
+-- Smart Train Fix. @rulesss
+-- Smart Queue System balloon and lava detection fix @rulesss
+-- Smart Double Train make donated troops bug fixed. @Fahid.Mahmood
+-- Auto Laboratory improved & wall breaker value fixed. @Óðinn
+-- Switch from mini to main GUI cause Mod tab to be Empty bug fixed. @Fahid.Mahmood
+-- Attack now button messing Shields status GUI bug fixed. @Fahid.Mahmood
+-- Chinese Language updated translation by @yeongann
+-- Drag And Drop Troops improved @ahsan iqbal
+
+**v1.2.1**
+ 
+**IMPROVED AND FIXED**
+
+-- Smart train Queue missing images Fixed pointed by @Boldina
+-- Switching accounts failed in new GooglePlay Update Fixed By @TripleM
+-- Chatbot Improved & Modified. Bot will switch back to English if Chatbot fails at any point after in-game language settings was changed to any other language.
+-- Thanks to beta tester @CruelIntentions which help me with feedbacks and continuous testing on 6 bots on 1 pc. By @Fahid.Mahmood
+-- Fixed Russian Languages by @rulesss
+  
+**v1.2.2**
+
+**Added**
+
+-- SM MOD updated to Official 7.6.3 @Fahid.Mahmood
+ 
+**IMPROVED AND FIXED**
+
+-- Super XP Farm Xp instead of attacking fixed. @Fahid.Mahmood
+-- Chinese Language updated translation by @yeongann
+
+**v1.3**
+
+**Added**
+
+-- Builder Base Remove Obstacles By @Fahid.Mahmood
+-- Don't retype text when request troops (just once) Added By @Fahid.Mahmood Original Author @ChacalGyn
+-- Drop trophy using Balloon when tier 1,2 troops not found Added By @Fahid.Mahmood
+-- CSV Test Attack now Button for Live and Dead base Added replicating original attack behavior By @Fahid.Mahmood
+
+**IMPROVED AND FIXED**
+
+-- Unable to determine Lab Status on Nox due to different pixel Reported By @BananaNinja fixed by @Fahid.Mahmood
+-- GoblinXP slot 11+ crash & config Reported By @Narey fixed by @Fahid.Mahmood 
+-- CSV deployment Speed value fixed by @Fahid.Mahmood
+-- Reset GoblinXp states too on click of Reset states @Fahid.Mahmood
+-- GTFO not training donated troops Reported By @Viruz  fixed by @Fahid.Mahmood
+-- Account Switch remain time not reading Fixed By @demen
+-- Russian Languages by @rulesss
+
+**v1.3.1**
+
+**IMPROVED AND FIXED**
+
+-- Fix MBR7.6.3 not donating spells by @demen
+-- GTFO not working issue reported by @dutchy fixed by @Fahid.Mahmood
+-- Attack Now for testing csv for any village by @Fahid.Mahmood
+-- CC config crash fixed reported by @espx fixed by @Fahid.Mahmood
+-- Bug Unable To Find Upgrade Button For Heroes When has Boost Spell Or Healing reported by @Kut fixed by @Fahid.Mahmood
