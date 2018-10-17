@@ -12,7 +12,6 @@
 ; ===============================================================================================================================
 
 Global $g_sImgImgLocButtons = @ScriptDir & "\imgxml\imglocbuttons"
-Global $g_sImgHeroUpgradeBtn = @ScriptDir & "\imgxml\imglocbuttons\upgradeheroes"  ; ADDED by SM MOD
 
 #Region Obstacles
 Global Const $g_sImgAnyoneThere = @ScriptDir & "\imgxml\other\AnyoneThere[[Android]]*"

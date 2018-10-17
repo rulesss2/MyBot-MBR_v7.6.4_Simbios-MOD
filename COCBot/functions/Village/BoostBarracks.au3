@@ -1,7 +1,7 @@
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: BoostBarracks.au3
 ; Description ...:
-; Syntax ........: BoostBarracks(), BoostSpellFactory()
+; Syntax ........: BoostBarracks(), BoostSpellFactory(), BoostWorkShop()
 ; Parameters ....:
 ; Return values .: None
 ; Author ........: MR.ViPER (9/9/2016)
@@ -13,10 +13,19 @@
 ; Example .......: No
 ; ===============================================================================================================================
 Func BoostBarracks()
+	$g_iCmbBoostBarracks = _GUICtrlComboBox_GetCurSel($g_hCmbBoostBarracks) ; OFFICIAL BUG FIX ADDED BY SM MOD
 	Return BoostTrainBuilding("Barracks", $g_iCmbBoostBarracks, $g_hCmbBoostBarracks)
 EndFunc   ;==>BoostBarracks
 
+;------------------ADDED By SM MOD - START------------------
+Func BoostWorkshop()
+	$g_iCmbBoostWorkshop = _GUICtrlComboBox_GetCurSel($g_hCmbBoostWorkshop) ; ADDED BY SM MOD
+	Return BoostTrainBuilding("Workshop", $g_iCmbBoostWorkshop, $g_hCmbBoostWorkshop)
+EndFunc   ;==>BoostWorkshop
+;------------------ADDED By SM MOD - END------------------
+
 Func BoostSpellFactory()
+	$g_iCmbBoostSpellFactory = _GUICtrlComboBox_GetCurSel($g_hCmbBoostSpellFactory) ; OFFICIAL BUG FIX ADDED BY SM MOD
 	Return BoostTrainBuilding("Spell Factory", $g_iCmbBoostSpellFactory, $g_hCmbBoostSpellFactory)
 EndFunc   ;==>BoostSpellFactory
 
@@ -30,18 +39,18 @@ Func BoostTrainBuilding($sName, $iCmbBoost, $iCmbBoostCtrl)
 		SetLog("Boosting " & $sName & " isn't planned, skipping", $COLOR_INFO)
 		Return $boosted
 	EndIf
-    
+
 	If GUICtrlRead($g_hChkForecastBoost) = $GUI_CHECKED Then
-	If $g_iCurrentForecast > Number($g_iTxtForecastBoost, 3) Then
-		Local $hour = StringSplit(_NowTime(4), ":", $STR_NOCOUNT)
-		If $g_abBoostBarracksHours[$hour[0]] = False Then
-			SetLog("No planned boosting for this hour.", $COLOR_RED)
-			Return ; exit func if no planned Boost Barracks checkmarks
+		If $g_iCurrentForecast > Number($g_iTxtForecastBoost, 3) Then
+			Local $hour = StringSplit(_NowTime(4), ":", $STR_NOCOUNT)
+			If $g_abBoostBarracksHours[$hour[0]] = False Then
+				SetLog("No planned boosting for this hour.", $COLOR_RED)
+				Return ; exit func if no planned Boost Barracks checkmarks
+			EndIf
+		Else
+			Return
 		EndIf
-	Else
-		Return
 	EndIf
-EndIf	
 	Local $sIsAre = "are"
 	SetLog("Boosting " & $sName, $COLOR_INFO)
 
@@ -51,6 +60,9 @@ EndIf
 		ElseIf $sName = "Spell Factory" Then
 			OpenSpellsTab(False, "BoostTrainBuilding()")
 			$sIsAre = "is"
+		ElseIf $sName = "Workshop" Then ; ADDED By SM MOD
+			OpenSiegeMachinesTab(False, "BoostTrainBuilding()") ; ADDED By SM MOD
+			$sIsAre = "is" ; ADDED By SM MOD
 		Else
 			SetDebugLog("BoostTrainBuilding(): $sName called with a wrong Value.", $COLOR_ERROR)
 			ClickP($aAway, 1, 0, "#0161")

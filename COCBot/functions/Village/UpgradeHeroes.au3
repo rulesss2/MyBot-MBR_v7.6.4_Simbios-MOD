@@ -156,28 +156,16 @@ Func QueenUpgrade()
 		Return
 	EndIf
 
-	;-------------------FIX(When Hero Is Healing Or Has Boost Spell Avaible Officials Code Does Not Work) ADDED By SM MOD - START-------------------
+	Local $offColors[3][3] = [[0xE07B50, 41, 23], [0x282020, 72, 0], [0xF5F9F2, 79, 0]] ; 2nd pixel brown hammer, 3rd pixel black, 4th pixel edge of button
+	Local $ButtonPixel = _MultiPixelSearch(240, 563 + $g_iBottomOffsetY, 670, 620 + $g_iBottomOffsetY, 1, 1, Hex(0xF5F6F2, 6), $offColors, 30) ; first gray/white pixel of button
 
-	;------------------REMOVED By SM MOD - START------------------
-	;Local $offColors[3][3] = [[0xE07B50, 41, 23], [0x282020, 72, 0], [0xF5F9F2, 79, 0]] ; 2nd pixel brown hammer, 3rd pixel black, 4th pixel edge of button
-	;Local $ButtonPixel = _MultiPixelSearch(240, 563 + $g_iBottomOffsetY, 670, 620 + $g_iBottomOffsetY, 1, 1, Hex(0xF5F6F2, 6), $offColors, 30) ; first gray/white pixel of button
-
-	;If IsArray($ButtonPixel) Then
-	;	If $g_bDebugSetlog And IsArray($ButtonPixel) Then
-	;		SetLog("ButtonPixel = " & $ButtonPixel[0] & ", " & $ButtonPixel[1], $COLOR_DEBUG) ;Debug
-	;		SetLog("Color #1: " & _GetPixelColor($ButtonPixel[0], $ButtonPixel[1], True) & ", #2: " & _GetPixelColor($ButtonPixel[0] + 41, $ButtonPixel[1] + 23, True) & ", #3: " & _GetPixelColor($ButtonPixel[0] + 72, $ButtonPixel[1], True) & ", #4: " & _GetPixelColor($ButtonPixel[0] + 79, $ButtonPixel[1], True), $COLOR_DEBUG)
-	;	EndIf
-	;	If _Sleep($DELAYUPGRADEHERO2) Then Return
-	;	Click($ButtonPixel[0] + 20, $ButtonPixel[1] + 20, 1, 0, "#0305") ; Click Upgrade Button
-	;------------------REMOVED By SM MOD - END------------------
-
-	Local $isUpgradeBtnfound = QuickMIS("BC1", $g_sImgHeroUpgradeBtn, 440, 635, 440 + 210, 635 + 40, True, False)
-
-	If $isUpgradeBtnfound Then
-		If $g_bDebugSetlog Then SetLog("Queen Upgrade Button = " & $g_iQuickMISX + 440 & ", " & $g_iQuickMISY + 635, $COLOR_DEBUG) ;Debug
+	If IsArray($ButtonPixel) Then
+		If $g_bDebugSetlog And IsArray($ButtonPixel) Then
+			SetLog("ButtonPixel = " & $ButtonPixel[0] & ", " & $ButtonPixel[1], $COLOR_DEBUG) ;Debug
+			SetLog("Color #1: " & _GetPixelColor($ButtonPixel[0], $ButtonPixel[1], True) & ", #2: " & _GetPixelColor($ButtonPixel[0] + 41, $ButtonPixel[1] + 23, True) & ", #3: " & _GetPixelColor($ButtonPixel[0] + 72, $ButtonPixel[1], True) & ", #4: " & _GetPixelColor($ButtonPixel[0] + 79, $ButtonPixel[1], True), $COLOR_DEBUG)
+		EndIf
 		If _Sleep($DELAYUPGRADEHERO2) Then Return
-		Click($g_iQuickMISX + 440, $g_iQuickMISY + 635, 1, 0, "#0305") ; Click Upgrade Button
-		;-------------------FIX(When Hero Is Healing Or Has Boost Spell Avaible Officials Code Does Not Work) ADDED By SM MOD - END-------------------
+		Click($ButtonPixel[0] + 20, $ButtonPixel[1] + 20, 1, 0, "#0305") ; Click Upgrade Button
 		If _Sleep($DELAYUPGRADEHERO3) Then Return ; Wait for window to open
 		If $g_bDebugImageSave Then DebugImageSave("UpgradeDarkBtn1")
 		If _ColorCheck(_GetPixelColor(721, 118 + $g_iMidOffsetY, True), Hex(0xE00408, 6), 20) Then ; Check if the Hero Upgrade window is open
@@ -282,28 +270,16 @@ Func KingUpgrade()
 		Return
 	EndIf
 
-	;-------------------FIX(When Hero Is Healing Or Has Boost Spell Avaible Officials Code Does Not Work) ADDED By SM MOD - START-------------------
+	Local $offColors[3][3] = [[0xE07B50, 41, 23], [0x282020, 72, 0], [0xF4F5F2, 79, 0]] ; 2nd pixel brown hammer, 3rd pixel black, 4th pixel edge of button
+	Local $ButtonPixel = _MultiPixelSearch(240, 563 + $g_iBottomOffsetY, 670, 620 + $g_iBottomOffsetY, 1, 1, Hex(0xF5F6F2, 6), $offColors, 30) ; first gray/white pixel of button
 
-	;------------------REMOVED By SM MOD - START------------------
-	;Local $offColors[3][3] = [[0xE07B50, 41, 23], [0x282020, 72, 0], [0xF4F5F2, 79, 0]] ; 2nd pixel brown hammer, 3rd pixel black, 4th pixel edge of button
-	;Local $ButtonPixel = _MultiPixelSearch(240, 563 + $g_iBottomOffsetY, 670, 620 + $g_iBottomOffsetY, 1, 1, Hex(0xF5F6F2, 6), $offColors, 30) ; first gray/white pixel of button
-
-	;If IsArray($ButtonPixel) Then
-	;	If $g_bDebugSetlog And IsArray($ButtonPixel) Then
-	;		SetLog("ButtonPixel = " & $ButtonPixel[0] & ", " & $ButtonPixel[1], $COLOR_DEBUG) ;Debug
-	;		SetLog("Color #1: " & _GetPixelColor($ButtonPixel[0], $ButtonPixel[1], True) & ", #2: " & _GetPixelColor($ButtonPixel[0] + 41, $ButtonPixel[1] + 23, True) & ", #3: " & _GetPixelColor($ButtonPixel[0] + 72, $ButtonPixel[1], True) & ", #4: " & _GetPixelColor($ButtonPixel[0] + 79, $ButtonPixel[1], True), $COLOR_DEBUG)
-	;	EndIf
-	;	If _Sleep($DELAYUPGRADEHERO2) Then Return
-	;	Click($ButtonPixel[0] + 20, $ButtonPixel[1] + 20, 1, 0, "#0305") ; Click Upgrade Button
-	;------------------REMOVED By SM MOD - END------------------
-
-	Local $isUpgradeBtnfound = QuickMIS("BC1", $g_sImgHeroUpgradeBtn, 440, 635, 440 + 210, 635 + 40, True, False)
-
-	If $isUpgradeBtnfound Then
-		If $g_bDebugSetlog Then SetLog("King Upgrade Button = " & $g_iQuickMISX + 440 & ", " & $g_iQuickMISY + 635, $COLOR_DEBUG) ;Debug
+	If IsArray($ButtonPixel) Then
+		If $g_bDebugSetlog And IsArray($ButtonPixel) Then
+			SetLog("ButtonPixel = " & $ButtonPixel[0] & ", " & $ButtonPixel[1], $COLOR_DEBUG) ;Debug
+			SetLog("Color #1: " & _GetPixelColor($ButtonPixel[0], $ButtonPixel[1], True) & ", #2: " & _GetPixelColor($ButtonPixel[0] + 41, $ButtonPixel[1] + 23, True) & ", #3: " & _GetPixelColor($ButtonPixel[0] + 72, $ButtonPixel[1], True) & ", #4: " & _GetPixelColor($ButtonPixel[0] + 79, $ButtonPixel[1], True), $COLOR_DEBUG)
+		EndIf
 		If _Sleep($DELAYUPGRADEHERO2) Then Return
-		Click($g_iQuickMISX + 440, $g_iQuickMISY + 635, 1, 0, "#0305") ; Click Upgrade Button
-		;-------------------FIX(When Hero Is Healing Or Has Boost Spell Avaible Officials Code Does Not Work) ADDED By SM MOD - END-------------------
+		Click($ButtonPixel[0] + 20, $ButtonPixel[1] + 20, 1, 0, "#0305") ; Click Upgrade Button
 		If _Sleep($DELAYUPGRADEHERO3) Then Return ; Wait for window to open
 		If $g_bDebugImageSave Then DebugImageSave("UpgradeDarkBtn1")
 		If _ColorCheck(_GetPixelColor(715, 120 + $g_iMidOffsetY, True), Hex(0xE01C20, 6), 20) Then ; Check if the Hero Upgrade window is open
@@ -412,27 +388,15 @@ Func WardenUpgrade()
 		Return
 	EndIf
 	If _Sleep($DELAYUPGRADEHERO2) Then Return
-	;-------------------FIX(When Hero Is Healing Or Has Boost Spell Avaible Officials Code Does Not Work) ADDED By SM MOD - START-------------------
-
-	;------------------REMOVED By SM MOD - START------------------
-	;Local $offColors[3][3] = [[0xBC5B31, 38, 32], [0xF84CF9, 72, 0], [0xF5F9F2, 79, 0]] ; 2nd pixel brown hammer, 3rd pixel pink, 4th pixel edge of button
-	;Local $ButtonPixel = _MultiPixelSearch(240, 563 + $g_iBottomOffsetY, 670, 620 + $g_iBottomOffsetY, 1, 1, Hex(0xF4F7F2, 6), $offColors, 30) ; first gray/white pixel of button
-	;If IsArray($ButtonPixel) Then
-	;	If $g_bDebugSetlog And IsArray($ButtonPixel) Then
-	;		SetLog("ButtonPixel = " & $ButtonPixel[0] & ", " & $ButtonPixel[1], $COLOR_DEBUG) ;Debug
-	;		SetLog("Color #1: " & _GetPixelColor($ButtonPixel[0], $ButtonPixel[1], True) & ", #2: " & _GetPixelColor($ButtonPixel[0] + 41, $ButtonPixel[1] + 23, True) & ", #3: " & _GetPixelColor($ButtonPixel[0] + 72, $ButtonPixel[1], True) & ", #4: " & _GetPixelColor($ButtonPixel[0] + 79, $ButtonPixel[1], True), $COLOR_DEBUG)
-	;	EndIf
-	;	If _Sleep($DELAYUPGRADEHERO2) Then Return
-	;	Click($ButtonPixel[0] + 20, $ButtonPixel[1] + 20, 1, 0, "#0305") ; Click Upgrade Button
-	;------------------REMOVED By SM MOD - END------------------
-
-	Local $isUpgradeBtnfound = QuickMIS("BC1", $g_sImgHeroUpgradeBtn, 440, 635, 440 + 210, 635 + 40, True, False)
-
-	If $isUpgradeBtnfound Then
-		If $g_bDebugSetlog Then SetLog("Warden Upgrade Button = " & $g_iQuickMISX + 440 & ", " & $g_iQuickMISY + 635, $COLOR_DEBUG) ;Debug
+	Local $offColors[3][3] = [[0xBC5B31, 38, 32], [0xF84CF9, 72, 0], [0xF5F9F2, 79, 0]] ; 2nd pixel brown hammer, 3rd pixel pink, 4th pixel edge of button
+	Local $ButtonPixel = _MultiPixelSearch(240, 563 + $g_iBottomOffsetY, 710, 620 + $g_iBottomOffsetY, 1, 1, Hex(0xF4F7F2, 6), $offColors, 30) ; first gray/white pixel of button ;OFFICIAL BUG FIXED EDITED BY SM MOD
+	If IsArray($ButtonPixel) Then
+		If $g_bDebugSetlog And IsArray($ButtonPixel) Then
+			SetLog("ButtonPixel = " & $ButtonPixel[0] & ", " & $ButtonPixel[1], $COLOR_DEBUG) ;Debug
+			SetLog("Color #1: " & _GetPixelColor($ButtonPixel[0], $ButtonPixel[1], True) & ", #2: " & _GetPixelColor($ButtonPixel[0] + 41, $ButtonPixel[1] + 23, True) & ", #3: " & _GetPixelColor($ButtonPixel[0] + 72, $ButtonPixel[1], True) & ", #4: " & _GetPixelColor($ButtonPixel[0] + 79, $ButtonPixel[1], True), $COLOR_DEBUG)
+		EndIf
 		If _Sleep($DELAYUPGRADEHERO2) Then Return
-		Click($g_iQuickMISX + 440, $g_iQuickMISY + 635, 1, 0, "#0305") ; Click Upgrade Button
-		;-------------------FIX(When Hero Is Healing Or Has Boost Spell Avaible Officials Code Does Not Work) ADDED By SM MOD - END-------------------
+		Click($ButtonPixel[0] + 20, $ButtonPixel[1] + 20, 1, 0, "#0305") ; Click Upgrade Button
 		If _Sleep($DELAYUPGRADEHERO3) Then Return ; Wait for window to open
 		If $g_bDebugSetlog Then DebugImageSave("UpgradeElixirBtn1")
 		If $g_bDebugSetlog Then SetDebugLog("pixel: " & _GetPixelColor(718, 120 + $g_iMidOffsetY, True) & " expected " & Hex(0xDD0408, 6) & " result: " & _ColorCheck(_GetPixelColor(718, 120 + $g_iMidOffsetY, True), Hex(0xDD0408, 6), 20), $COLOR_DEBUG)
@@ -489,4 +453,3 @@ Func ReservedBuildersForHeroes()
 
 	Return $iFreeBuildersReservedForHeroes
 EndFunc   ;==>ReservedBuildersForHeroes
-

@@ -126,6 +126,10 @@
 
 **v1.3.1**
 
+**Added**
+
+-- Boost Seige Machines By @Fahid.Mahmood
+
 **IMPROVED AND FIXED**
 
 -- Fix MBR7.6.3 not donating spells by @demen
@@ -133,3 +137,4 @@
 -- Attack Now for testing csv for any village by @Fahid.Mahmood
 -- CC config crash fixed reported by @espx fixed by @Fahid.Mahmood
 -- Bug Unable To Find Upgrade Button For Heroes When has Boost Spell Or Healing reported by @Kut fixed by @Fahid.Mahmood
+-- Switch to Builderbase improve based on BB trophies or Clean yard to work standalone @Fahid.Mahmood

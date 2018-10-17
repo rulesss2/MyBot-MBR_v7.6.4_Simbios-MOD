@@ -825,7 +825,7 @@ Func runBot() ;Bot that runs everything in order
 					If CheckAndroidReboot() = True Then ContinueLoop 2 ; must be level 2 due to loop-in-loop
 				WEnd
 				;BoostEverything() ; 1st Check if is to use Training Potion ; REMOVED By SM MOD
-				Local $aRndFuncList = ['BoostBarracks', 'BoostSpellFactory', 'BoostKing', 'BoostQueen', 'BoostWarden', 'BoostAll', 'OneGemBoost'] ; EDITED By SM MOD
+				Local $aRndFuncList = ['BoostBarracks', 'BoostSpellFactory', 'BoostWorkshop', 'BoostKing', 'BoostQueen', 'BoostWarden', 'BoostAll', 'OneGemBoost'] ; EDITED By SM MOD
 				While 1
 					If $g_bRunState = False Then Return
 					If $g_bRestart = True Then ContinueLoop 2 ; must be level 2 due to loop-in-loop
@@ -1288,6 +1288,8 @@ Func _RunFunction($action)
 			BoostBarracks()
 		Case "BoostSpellFactory"
 			BoostSpellFactory()
+		Case "BoostWorkshop"
+			BoostWorkshop()
 		Case "BoostKing"
 			BoostKing()
 		Case "BoostQueen"
@@ -1326,7 +1328,7 @@ Func _RunFunction($action)
 			AutoUpgrade()
 			_Sleep($DELAYRUNBOT3)
 		Case "BuilderBase"
-			If isOnBuilderBase() Or (($g_bChkCollectBuilderBase Or $g_bChkStartClockTowerBoost Or $g_iChkBBSuggestedUpgrades) And SwitchBetweenBases()) Then
+			If isOnBuilderBase() Or (($g_bChkCollectBuilderBase Or $g_bChkStartClockTowerBoost Or $g_iChkBBSuggestedUpgrades Or $g_bChkCleanYardBB Or $g_bChkBB_DropTrophies) And SwitchBetweenBases()) Then
 				CollectBuilderBase()
 				BuilderBaseReport()
 				BB_DropTrophies(); Builder Base Drop Trophies - ADDED by SM MOD

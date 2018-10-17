@@ -1,6 +1,6 @@
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: BB_DropTrophies
-; Description ...: 
+; Description ...:
 ; Author ........: Chackal++
 ; Modified ......:
 ; Remarks .......: This file is part of MyBot, previously known as ClashGameBot. Copyright 2015-2016
@@ -36,10 +36,14 @@ Func BB_DropTrophies()
 
 	If $g_bChkBB_DropTrophies Then
 		; Click attack button and find a match
+		If $g_aiCurrentLootBB[$eLootTrophyBB] = 0 Then BuilderBaseReport() ; BB Trophy is 0 then check builderbase report ; ADDED BY SM MOD
+
+		If _Sleep($DELAYRESPOND) Then Return ; ADDED BY SM MOD
+
 		If $g_iTxtBB_DropTrophies > 0 Then
 			$i = $g_aiCurrentLootBB[$eLootTrophyBB] - $g_iTxtBB_DropTrophies
 		Endif
-		If $i > 0 Then 
+		If $i > 0 Then
 
 			If _Sleep($DELAYRUNBOT1) Then Return
 
@@ -52,11 +56,11 @@ Func BB_DropTrophies()
 				SetLog("BB: Attacking on a single side", $COLOR_INFO)
 				For $i = 0 to 5
 					; Pos Next Slot
-					If ($i > 0) Then 
+					If ($i > 0) Then
 						$aTroopSlot[0] += 72
 					EndIf
 					$j = 0
-					If ($i > 0) Then 
+					If ($i > 0) Then
 						$cPixColor = _GetPixelColor($aTroopSlot[0], $aTroopSlot[1], True)
 						If _Sleep($DELAYRUNBOT1) Then Return
 						IF BB_ColorCheck( $aTroopSlot, $aSlotActive ) Then
@@ -171,7 +175,7 @@ Func BB_DropTrophies()
 	Else
 		Setlog("Ignore BB Drop Trophies [ Disabled ]", $COLOR_INFO)
 	EndIf
-	
+
 	_Sleep($DELAYRUNBOT1)
 
 EndFunc	;==>BB_DropTrophies
