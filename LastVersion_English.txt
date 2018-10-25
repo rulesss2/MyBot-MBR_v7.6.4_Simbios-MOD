@@ -1,0 +1,6 @@
+[mod]
+version    = "v1.4"
+messagenew = "Fully working with June 2018 Update\nNew GUI and lots of new features\nFor more information, go to \nhttps://mybot.run\n\n Always free and open source."
+messageold = "A new version of MyBot Simbios MOD 1.4 is available!\nPlease download the latest from:\nhttps://mybot.run"
+
+
